@@ -20,8 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('register', [UsersController::class, 'register']);
 Route::post('login', [UsersController::class, 'login']);
 
+Route::group(['middleware' => ['cors']],function(){
+    Route::post('register', [UsersController::class, 'register']);
+});
 Route::Resource('personalInformation', PersonalInformationUserController::class)->except(['create', 'edit']);
 Route::post('getPersonalInformation',[PersonalInformationUserController::class,'getPersonalDataByUserId']);
