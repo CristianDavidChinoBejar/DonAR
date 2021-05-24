@@ -4,9 +4,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-
+// import { KeyboardArrowDownIcon } from '@material-ui/icons';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-
+import Estruct_publication from '../estruct_publication/Estruct_publication'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
       return (
         <React.Fragment>
           <Grid item xs={3}>
-            <Paper className={classes.paper}>Publicación</Paper>
+            <Paper className={classes.paper}>
+              <Estruct_publication />
+            </Paper>
           </Grid>
           <Grid item xs={3}>
             <Paper className={classes.paper}>Publicación</Paper>
@@ -61,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
         <Box display="flex" justifyContent="center" m={1} p={1} bgcolor="background.paper" >
             <Button p={1} bgcolor="grey.300" variant="contained" color="primary" >
                 Ver más
-                
                 <KeyboardArrowDownIcon />
             </Button>
         </Box>
