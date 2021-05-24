@@ -12,6 +12,7 @@ class UsersController extends Controller
     {
         // dd($request->all());
         $request->merge(['password' => bcrypt($request->input('password'))]);
+
         $User = User::create($request->only(['email','password']));
 
         return response()->json(['response'=>$User],200);
