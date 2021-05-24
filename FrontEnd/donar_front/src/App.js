@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Grid_publication from './components/Grid_publication/Grid_publication';
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,13 +16,12 @@ import Form_registro from './components/Formulario_registro/Form_registro';
 function App() {
   return (
     <Router>
-
-      
-
       <Switch>
+        
         <Route path="/registro">
           <Form_registro />
         </Route>
+
         <Route path="/">
           <div className="App">
             <NavBar />
@@ -35,6 +35,7 @@ function App() {
             </Box>
 
             <Grid_publication />
+            
           </div>
         </Route>
       </Switch>
