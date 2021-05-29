@@ -23,11 +23,33 @@ const Form_registro = () => {
             },
             body: data,
             
-        }) .then(datos => datos.json())
+        }) .then(datos => datos.json())                                                                                        
             .then(dataFormRegistro => {
                 console.log(dataFormRegistro)
             })
-       
+
+            fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+        //TODO: FALTA TERMINAR EL ENVIO DEL FORMULARIO
+        // try {
+        //     let config = {
+        //         method: 'POST',
+        //         headers: {
+        //             // 'Accept': 'application/json',
+        //             // 'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({email, pass})
+        //     }
+            
+        //     fetch('url', {
+        //         config
+        //     })
+
+        //     console.log({email, pass})
+        // } catch (error) {
+            
+        // }
     }
 
     return (
