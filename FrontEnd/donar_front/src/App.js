@@ -1,7 +1,10 @@
 import NavBar from './components/navBar/NavBar';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+// import Publication from './components/Publication/Publication';
 import Grid_publication from './components/Grid_publication/Grid_publication';
+
+import Button_donar from './components/Button_donar/Button_donar';
 
 
 import {
@@ -41,6 +44,7 @@ function App() {
       </Switch>
 
     </Router>
+    
   );
 }
 

@@ -16,10 +16,14 @@ const Form_registro = () => {
             method: 'POST',
             body: data
             
-        }) .then(datos => datos.json())
+        }) .then(datos => datos.json())                                                                                        
             .then(dataFormRegistro => {
                 console.log(dataFormRegistro)
             })
+
+            fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
         //TODO: FALTA TERMINAR EL ENVIO DEL FORMULARIO
         // try {
         //     let config = {
