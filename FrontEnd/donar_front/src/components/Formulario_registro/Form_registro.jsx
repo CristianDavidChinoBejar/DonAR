@@ -3,42 +3,31 @@ import {Container, FormControl, InputLabel, Input, FormHelperText, Button, Grid}
 
 const Form_registro = () => {
     const [email, setEmail] = useState("")
-    const [pass, setPass] = useState("")
+    const [password, setPass] = useState("")
 
     const handdleSubmit = async e => {
         // fetch o axios
         e.preventDefault()
         let form = document.getElementById('form_registro')
-        console.log(form)
+        // let form = document.getElementById('form_registro')
+        // console.log(form)
+        // console.log('hola');
         let data =  new FormData(form)
-
-       await fetch('http://127.0.0.1:8000/api/register',{
+        data = JSON.stringify({email,password})
+        console.log(data)
+        await fetch('http://127.0.0.1:8000/api/register',{
             method: 'POST',
-            body: data
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: data,
             
         }) .then(datos => datos.json())
             .then(dataFormRegistro => {
                 console.log(dataFormRegistro)
             })
-        //TODO: FALTA TERMINAR EL ENVIO DEL FORMULARIO
-        // try {
-        //     let config = {
-        //         method: 'POST',
-        //         headers: {
-        //             // 'Accept': 'application/json',
-        //             // 'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({email, pass})
-        //     }
-            
-        //     fetch('url', {
-        //         config
-        //     })
-
-        //     console.log({email, pass})
-        // } catch (error) {
-            
-        // }
+       
     }
 
     return (
@@ -56,14 +45,14 @@ const Form_registro = () => {
                     <label > Password </label>
                     <input 
                         onChange = {({target : {value}}) => setPass(value) } 
-                        value = {pass}
+                        value = {password}
                         name = "password"   
                     />
                     <input type="submit" value="submit"/>
 
                 </form>
 
-                <div>Form data: {JSON.stringify({email, pass})} </div>
+                <div>Form data: {JSON.stringify({email, pass: password})} </div>
                 
                 {/* <form action="hola.php" method="post" id="formulario">
                     <InputLabel htmlFor="email">Ingrese su Mail</InputLabel>
