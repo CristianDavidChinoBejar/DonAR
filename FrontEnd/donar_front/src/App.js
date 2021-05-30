@@ -1,11 +1,12 @@
+import './App.scss';
 import NavBar from './components/navBar/NavBar';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
+// import Button from '@material-ui/core/Button';
+// import Box from '@material-ui/core/Box';
 // import Publication from './components/Publication/Publication';
 import Grid_publication from './components/Grid_publication/Grid_publication';
 
-import Button_donar from './components/Button_donar/Button_donar';
-
+// import Button_donar from './components/Button_donar/Button_donar';
+import Button_donar from './components/Button_donar/Button_donar'
 
 import {
   BrowserRouter as Router,
@@ -16,7 +17,9 @@ import {
 import Form_registro from './components/Formulario_registro/Form_registro';
 
 
+
 function App() {
+  // const name_button = "Publicar Donación"
   return (
     <Router>
       <Switch>
@@ -28,17 +31,16 @@ function App() {
         <Route path="/">
           <div className="App">
             <NavBar />
-            
-            <Box display="flex" justifyContent="center" m={1} p={1} bgcolor="background.paper" >
-              <Button p={1} bgcolor="grey.300" variant="contained" color="primary">
-                <Link to="/registro" >
-                  Publicar Donación
-                </Link>
-              </Button>
-            </Box>
+
+            <Link to="/registro" style={{ textDecoration: 'none' }}>
+              <Button_donar nameButton = {"Publicar Donación"} />
+            </Link>
+
+            <Link to="/registro" style={{ textDecoration: 'none' }}>
+              <Button_donar nameButton = {"Publicar Pedido"} />
+            </Link>
 
             <Grid_publication />
-            
           </div>
         </Route>
       </Switch>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Container, FormControl, InputLabel, Input, FormHelperText, Button, Grid} from '@material-ui/core';
+import {Container} from '@material-ui/core';
 
 const Form_registro = () => {
     const [email, setEmail] = useState("")
@@ -25,12 +25,9 @@ const Form_registro = () => {
             
         }) .then(datos => datos.json())                                                                                        
             .then(dataFormRegistro => {
-                console.log(dataFormRegistro)
+                console.log(dataFormRegistro.errors.email)
             })
 
-            fetch('http://example.com/movies.json')
-  .then(response => response.json())
-  .then(data => console.log(data));
         //TODO: FALTA TERMINAR EL ENVIO DEL FORMULARIO
         // try {
         //     let config = {
