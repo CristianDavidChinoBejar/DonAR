@@ -1,16 +1,14 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
-import {Link} from "react-router-dom";
 
-const Button_donar = () => {
+import '../../App'
+import './Button_donar.scss'
+
+const Button_donar = ({nameButton}) => {
     return (
-        <div>
-            <Button p={1} bgcolor="grey.300" variant="contained" color="primary">
-                <Link to="/registro" >
-                  Publicar Donación
-                </Link>
-              </Button>
-        </div>
+        <Button p={1} bgcolor="grey.300" variant="contained" color="secondary" className="Button_donar">
+            {nameButton}
+        </Button>
     )
 }
 

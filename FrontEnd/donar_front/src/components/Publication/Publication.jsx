@@ -32,20 +32,20 @@ export default function Publication() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            Publicaciones kpo
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel corporis deleniti 
+            qui molestiae possimus provident illum tempora rerum. Id et eos, architecto iure unde itaque magnam non voluptatem maxime illum.
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Ver más
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          Donar
         </Button>
       </CardActions>
     </Card>
