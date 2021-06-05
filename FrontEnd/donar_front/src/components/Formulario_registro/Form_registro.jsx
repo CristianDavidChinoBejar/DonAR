@@ -4,6 +4,7 @@ import {Container} from '@material-ui/core';
 const Form_registro = () => {
     const [email, setEmail] = useState("")
     const [password, setPass] = useState("")
+    const [form_data, setForm_data] = useState([])
 
     const handdleSubmit = async e => {
         // fetch o axios
@@ -26,27 +27,8 @@ const Form_registro = () => {
         }) .then(datos => datos.json())                                                                                        
             .then(dataFormRegistro => {
                 console.log(dataFormRegistro.errors.email)
+                setForm_data(dataFormRegistro)
             })
-
-        //TODO: FALTA TERMINAR EL ENVIO DEL FORMULARIO
-        // try {
-        //     let config = {
-        //         method: 'POST',
-        //         headers: {
-        //             // 'Accept': 'application/json',
-        //             // 'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({email, pass})
-        //     }
-            
-        //     fetch('url', {
-        //         config
-        //     })
-
-        //     console.log({email, pass})
-        // } catch (error) {
-            
-        // }
     }
 
     return (
@@ -73,6 +55,12 @@ const Form_registro = () => {
 
                 <div>Form data: {JSON.stringify({email, pass: password})} </div>
                 
+                <div>
+                    {form_data.map( data => (
+                        <p> ${data} </p> //data. cosasssss ctmr
+                    ))}
+                </div>
+
                 {/* <form action="hola.php" method="post" id="formulario">
                     <InputLabel htmlFor="email">Ingrese su Mail</InputLabel>
                     <Input id="email" type="email" aria-describedby="email-helper" />
